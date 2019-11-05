@@ -1,29 +1,34 @@
 var input, result;
-var num = 0; //remove once init function setup
-
+var num = 0; 
 function myFunction (){
   input = Number(document.getElementById('input').value);
 };
-
 function sumFun() {
   myFunction();
-  result = num+input;
-  // render();
-  display.textContent = result; //remove afterwards
+  num = result = num+input;
+  display.textContent = result;
+  if (num < 0) {
+    document.getElementById('display').style.color = 'red';
+  }
+    if (num > 0) {
+    document.getElementById('display').style.color = 'black';
+  }
 }
 function minusFun() {
   myFunction();
-  result = num-input;
-  // render();
-  display.textContent = result; //remove afterwards...
+  num = result = num-input;
+  display.textContent = result; 
+  if (num < 0) {
+    document.getElementById('display').style.color = 'red';
+  }
+    if (num > 0) {
+    document.getElementById('display').style.color = 'black';
+  }
 }
-
 function init(){
   var num = 0;
   render();
 };
 function render() {
-  
-  display.style.color = sum >= 0 ? 'green' : 'red';
 };
 init();
